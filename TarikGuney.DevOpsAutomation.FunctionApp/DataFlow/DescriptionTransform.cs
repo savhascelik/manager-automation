@@ -51,6 +51,8 @@ namespace TarikGuney.DevOpsAutomation.DataFlow
                         ? userDisplayName
                         : $"<users/{devOpsGoogleChatUserMap.GoogleChatUserId}>";
 
+                    Logger.CurrentLogger.LogInformation()
+
                     messageBuilder.Append(
                         $"{chatDisplayName}, add a *description* to <{workItemUrl}|{workItemTitle}>.\n\n");
                 }
