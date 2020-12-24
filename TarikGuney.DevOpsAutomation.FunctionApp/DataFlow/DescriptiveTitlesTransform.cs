@@ -46,6 +46,7 @@ namespace TarikGuney.DevOpsAutomation.DataFlow
                     var chatDisplayName = devOpsGoogleChatUserMap == null
                         ? userDisplayName
                         : $"<users/{devOpsGoogleChatUserMap.GoogleChatUserId}>";
+
                     Logger.CurrentLogger.LogInformation(
 	                    "BOARD: Unclear title for \"{workItemId}:{workItemTitle}\". Assigned to {userEmail} in {currentIteration}.",
 	                    workItemId, workItemTitle, userEmail, Config.CurrentIteration.Name);
