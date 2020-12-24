@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks.Dataflow;
 using System.Web;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 
 namespace TarikGuney.DevOpsAutomation.DataFlow
@@ -45,6 +46,9 @@ namespace TarikGuney.DevOpsAutomation.DataFlow
                     var chatDisplayName = devOpsGoogleChatUserMap == null
                         ? userDisplayName
                         : $"<users/{devOpsGoogleChatUserMap.GoogleChatUserId}>";
+                    Logger.CurrentLogger.LogInformation(
+	                    "BOARD: Unclear title for {workItemId}:{workItemTitle}. Assigned to {userEmail} in {currentIteration}.",
+	                    workItemId, workItemTitle, userEmail, Config.CurrentIteration.Name);
 
                     messageBuilder.Append(
                         $"{chatDisplayName}, add a *more descriptive title* to <{workItemUrl}|{workItemTitle}>.\n\n");
