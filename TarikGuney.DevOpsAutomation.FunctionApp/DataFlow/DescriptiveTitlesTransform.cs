@@ -12,7 +12,7 @@ namespace TarikGuney.DevOpsAutomation.DataFlow
     public static class DescriptiveTitlesTransform
     {
         public static TransformBlock<List<JObject>, string> Block =>
-            new TransformBlock<List<JObject>, string>(workItems =>
+            new(workItems =>
             {
                 var offendingWorkItems = workItems
                     .Where(wi => wi["fields"] is JObject fields &&
