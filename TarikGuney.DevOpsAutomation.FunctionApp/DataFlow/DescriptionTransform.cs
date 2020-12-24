@@ -53,7 +53,7 @@ namespace TarikGuney.DevOpsAutomation.DataFlow
 						: $"<users/{devOpsGoogleChatUserMap.GoogleChatUserId}>";
 
 					Logger.CurrentLogger.LogInformation(
-						"BOARD: Missing description for {workItemId}:{workItemTitle}. Assigned to {userEmail} in {currentIteration}.",
+						"BOARD: Missing description for \"{workItemId}:{workItemTitle}\". Assigned to {userEmail} in {currentIteration}.",
 						workItemId, workItemTitle, userEmail, Config.CurrentIteration.Name);
 
 					messageBuilder.Append(
